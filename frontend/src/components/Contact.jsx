@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -32,19 +31,19 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: <Mail className="text-blue-600" size={24} />,
+      icon: <Mail className="text-blue-400" size={24} />,
       label: 'Email',
       value: personal.email,
       link: `mailto:${personal.email}`
     },
     {
-      icon: <Phone className="text-blue-600" size={24} />,
+      icon: <Phone className="text-cyan-400" size={24} />,
       label: 'Phone',
       value: personal.phone,
       link: `tel:${personal.phone}`
     },
     {
-      icon: <MapPin className="text-blue-600" size={24} />,
+      icon: <MapPin className="text-blue-400" size={24} />,
       label: 'Location',
       value: personal.location,
       link: null
@@ -52,13 +51,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-slate-50">
+    <section id="contact" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Get In Touch</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach out!
           </p>
         </div>
@@ -66,49 +65,51 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
             <div className="space-y-4 mb-8">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="p-4 border-2 border-slate-200 hover:border-blue-400 transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0">{info.icon}</div>
-                    <div>
-                      <p className="text-sm text-slate-600 font-medium">{info.label}</p>
-                      {info.link ? (
-                        <a
-                          href={info.link}
-                          className="text-slate-900 font-semibold hover:text-blue-600 transition-colors"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-slate-900 font-semibold">{info.value}</p>
-                      )}
+                <div key={index} className="border-light-sweep hover:scale-105 transition-all duration-300">
+                  <div className="border-light-sweep-content p-4">
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0">{info.icon}</div>
+                      <div>
+                        <p className="text-sm text-gray-400 font-medium">{info.label}</p>
+                        {info.link ? (
+                          <a
+                            href={info.link}
+                            className="text-white font-semibold hover:text-blue-400 transition-colors"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-white font-semibold">{info.value}</p>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </Card>
+                </div>
               ))}
             </div>
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-bold text-slate-900 mb-4">Connect with me</h4>
+              <h4 className="text-lg font-bold text-white mb-4">Connect with me</h4>
               <div className="flex gap-4">
                 <a
                   href={personal.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 border-2 border-slate-300 rounded-lg hover:border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-110"
+                  className="p-3 border-2 border-gray-700 rounded-lg hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 transform hover:scale-110"
                 >
-                  <Github className="text-slate-700" size={24} />
+                  <Github className="text-gray-300 hover:text-blue-400" size={24} />
                 </a>
                 <a
                   href={personal.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 border-2 border-slate-300 rounded-lg hover:border-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-110"
+                  className="p-3 border-2 border-gray-700 rounded-lg hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 transform hover:scale-110"
                 >
-                  <Linkedin className="text-slate-700" size={24} />
+                  <Linkedin className="text-gray-300 hover:text-blue-400" size={24} />
                 </a>
               </div>
             </div>
@@ -116,66 +117,68 @@ const Contact = () => {
 
           {/* Right: Contact Form */}
           <div>
-            <Card className="p-8 border-2 border-slate-200">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Send a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="border-2 border-slate-300 focus:border-blue-600"
-                  />
-                </div>
+            <div className="border-light-sweep">
+              <div className="border-light-sweep-content p-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
+                      Your Name
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="border-2 border-gray-700 focus:border-blue-500 bg-gray-900 text-white placeholder:text-gray-500"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Your Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="john@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="border-2 border-slate-300 focus:border-blue-600"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
+                      Your Email
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="border-2 border-gray-700 focus:border-blue-500 bg-gray-900 text-white placeholder:text-gray-500"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell me about your project or inquiry..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="border-2 border-slate-300 focus:border-blue-600 resize-none"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
+                      Message
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell me about your project or inquiry..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="border-2 border-gray-700 focus:border-blue-500 bg-gray-900 text-white placeholder:text-gray-500 resize-none"
+                    />
+                  </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg group"
-                >
-                  Send Message
-                  <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                </Button>
-              </form>
-            </Card>
+                  <Button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg group border-0 shadow-lg shadow-blue-500/30"
+                  >
+                    Send Message
+                    <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                  </Button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
