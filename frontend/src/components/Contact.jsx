@@ -52,7 +52,7 @@ const Contact = () => {
       icon: <Mail className="text-blue-400" size={24} />,
       label: 'Email',
       value: personal.email,
-      link: `mailto:${personal.email}`
+      link: null
     },
     {
       icon: <Phone className="text-cyan-400" size={24} />,

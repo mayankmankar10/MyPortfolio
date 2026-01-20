@@ -32,9 +32,8 @@ const Hero = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 text-center">
         <div
-          className={`transform transition-all duration-1000 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}
+          className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
         >
           {/* Greeting */}
           <p className="text-blue-400 font-medium text-lg mb-4">Hi there, I'm</p>
@@ -92,12 +91,11 @@ const Hero = () => {
             >
               <Linkedin size={28} />
             </a>
-            <a
-              href={`mailto:${personal.email}`}
-              className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110 duration-200"
+            <div
+              className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110 duration-200 cursor-default"
             >
               <Mail size={28} />
-            </a>
+            </div>
           </div>
         </div>
       </div>

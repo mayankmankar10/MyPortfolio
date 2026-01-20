@@ -8,8 +8,8 @@ export const portfolioData = {
     phone: "+91 7666240672",
     summary: "Aspiring AI/ML engineer with expertise in Python, Machine learning, Generative AI, and Automation workflows. Strong foundation in LLMs, RAG systems, and API-driven integrations, with hands-on experience in building intelligent applications and workflow optimizations. Skilled at combining problem-solving and emerging AI tools to deliver scalable and real-world solutions.",
     social: {
-      linkedin: "https://linkedin.com/in/mayankmankar",
-      github: "https://github.com/mayankmankar"
+      linkedin: "https://www.linkedin.com/in/mayank-mankar-a668bb284/",
+      github: "https://github.com/mayankmankar10"
     }
   },
 
@@ -47,7 +47,7 @@ export const portfolioData = {
         "Real-time chat and notification system"
       ],
       image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
-      link: "#",
+      link: "https://github.com/mayankmankar10/MajorProject",
       featured: true
     },
     {
@@ -64,7 +64,7 @@ export const portfolioData = {
         "Multi-format document support"
       ],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      link: "#",
+      link: "https://github.com/mayankmankar10/document-rag-langchain",
       featured: true
     },
     {
@@ -80,8 +80,8 @@ export const portfolioData = {
         "Context compression for efficiency",
         "Real-time Q&A interface"
       ],
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
-      link: "#"
+      image: "/youtube-icon.png",
+      link: "https://github.com/mayankmankar10/youtube-chrome-plugin"
     },
     {
       id: 4,
@@ -96,13 +96,12 @@ export const portfolioData = {
         "Deadline tracking and reminders",
         "No-code workflow design"
       ],
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
-      link: "#"
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80"
     }
   ],
 
   skills: {
-    languages: ["Python"],
+    languages: ["Python", "SQL"],
     frameworks: ["LangChain", "FastAPI", "React", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn"],
     databases: ["Vector Databases", "Qdrant", "FAISS", "SQLite"],
     tools: ["Git", "GitHub", "Jupyter", "n8n", "Chrome Extension"],

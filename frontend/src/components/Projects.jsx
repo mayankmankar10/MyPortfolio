@@ -10,8 +10,8 @@ const Projects = () => {
 
   const categories = ['all', ...new Set(projects.map(p => p.category))];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
@@ -33,11 +33,10 @@ const Projects = () => {
               key={cat}
               onClick={() => setFilter(cat)}
               variant={filter === cat ? 'default' : 'outline'}
-              className={`${
-                filter === cat
+              className={`${filter === cat
                   ? 'bg-blue-600 hover:bg-blue-700 text-white border-0'
                   : 'border-gray-600 text-gray-300 hover:border-blue-500 hover:text-blue-400 bg-transparent'
-              }`}
+                }`}
             >
               {cat === 'all' ? 'All Projects' : cat}
             </Button>
@@ -108,14 +107,16 @@ const Projects = () => {
                   </div>
 
                   {/* Link */}
-                  <Button
-                    onClick={() => window.open(project.link, '_blank')}
-                    variant="outline"
-                    className="w-full group/btn hover:bg-blue-600 hover:text-white border-gray-600 text-gray-300 bg-transparent"
-                  >
-                    View Project
-                    <ExternalLink className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
-                  </Button>
+                  {project.link && (
+                    <Button
+                      onClick={() => window.open(project.link, '_blank')}
+                      variant="outline"
+                      className="w-full group/btn hover:bg-blue-600 hover:text-white border-gray-600 text-gray-300 bg-transparent"
+                    >
+                      View Project
+                      <ExternalLink className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
