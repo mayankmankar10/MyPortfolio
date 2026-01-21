@@ -80,8 +80,8 @@ export const portfolioData = {
         "Context compression for efficiency",
         "Real-time Q&A interface"
       ],
-      image: "/youtube-icon.png",
-      link: "https://github.com/mayankmankar10/youtube-chrome-plugin"
+      image: "/youtube-icon.jpg",
+      link: "https://github.com/mayankmankar10/nlp-projectS"
     },
     {
       id: 4,
